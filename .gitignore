@@ -1,0 +1,108 @@
+# ==========================================
+# TrustVault - Secure Git Ignore Configuration
+# ==========================================
+
+# ------------------------------------------
+# 1. Environment & Secret Credentials
+# ------------------------------------------
+# Ignore all environment configuration files containing sensitive secrets
+.env
+.env.*
+*.env
+backend/.env
+frontend/.env
+
+# Explicitly allow committing template files with safe placeholder values
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+
+# ------------------------------------------
+# 2. Dependency Directories
+# ------------------------------------------
+node_modules/
+*/node_modules/
+
+# ------------------------------------------
+# 3. Build & Compilation Artifacts
+# ------------------------------------------
+dist/
+*/dist/
+build/
+*/build/
+out/
+.next/
+.output/
+
+# ------------------------------------------
+# 4. Local Database Files & Journals
+# ------------------------------------------
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite3-journal
+dev.db
+backend/prisma/dev.db
+prisma/*.db
+prisma/*.sqlite
+
+# ------------------------------------------
+# 5. Private Document Vault & Local Upload Storage
+# ------------------------------------------
+# Ensure confidential physical vault files are NEVER pushed to version control
+vault_storage/
+*/vault_storage/
+backend/vault_storage/
+uploads/
+*/uploads/
+
+# ------------------------------------------
+# 6. Log Files & Debug Output
+# ------------------------------------------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------
+# 7. Operating System Artifacts
+# ------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------
+# 8. IDE, Editor & Workspace Settings
+# ------------------------------------------
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+*~
+
+# ------------------------------------------
+# 9. Test & Coverage Reports
+# ------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
